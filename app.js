@@ -7,13 +7,13 @@ const Comment = require('./models/comment');
 
 mongoose.connect('mongodb://localhost/yelp_camp', {useNewUrlParser: true});
 app.use(bodyParser.urlencoded({extended: true}));
+app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
   res.render('landing');
 });
 
-// INDEX - show all campgrounds
 app.get('/campgrounds', (req, res) => {
   Campground.find({}, (err, campgrounds) => {
     if (err) {
@@ -24,7 +24,6 @@ app.get('/campgrounds', (req, res) => {
   });
 });
 
-// CREATE - add new campground to db
 app.post('/campgrounds', (req, res) => {
   const name = req.body.name;
   const image = req.body.image;
@@ -41,21 +40,17 @@ app.post('/campgrounds', (req, res) => {
   );
 });
 
-// NEW - show form to add new campground
 app.get('/campgrounds/new', (req, res) => {
   res.render('campgrounds/new');
 });
 
-// SHOW - show more info on specific campground
 app.get('/campgrounds/:id', (req, res) => {
-  // find campground with provided id
   Campground.findById(req.params.id)
       .populate('comments')
       .exec((err, foundCampground) => {
         if (err) {
           console.log(err);
         } else {
-        // render show template with that campground
           res.render('campgrounds/show', {campground: foundCampground});
         }
       });

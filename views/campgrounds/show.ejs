@@ -1,13 +1,41 @@
 <% include ../partials/header %> <% include ../partials/navbar %>
 
-<h1><%= campground.name %></h1>
-<img src="<%= campground.image %>" />
-<p><%= campground.description %></p>
-<p>
-  <a class="btn btn-success" href="/campgrounds/<%= campground._id %>/comments/new%>">Add New Comment</a>
-</p>
-<% campground.comments.forEach((comment)=> { %>
-<p><strong><%= comment.author %></strong> - <%= comment.text %></p>
-<% }); %>
+<div class="row justify-content-md-center mt-4">
+  <div class="col-md-2">
+    <p class="lead">CampFinder</p>
+    <div class="list-group">
+      <li class="list-group-item active">Info 1</li>
+      <li class="list-group-item">Info 2</li>
+      <li class="list-group-item">Info 3</li>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="card">
+      <img class="card-img-top" src="<%= campground.image %>" />
+      <div class="card-body">
+        <h4 class="card-title d-inline"><a href="#"><%= campground.name %></a></h4>
+        <h4 class="card-text float-right">$9.00/night</h4>
+        <p class="card-text mt-3"><%= campground.description %></p>
+      </div>
+    </div>
+    <div class="card bg-light mt-3">
+      <p class="card-body text-dark m-0">
+        <a class="btn btn-outline-success float-right" href="/campgrounds/<%= campground._id %>/comments/new%>">
+          Add New Comment
+        </a>
+      </p>
+      <hr class="mt-0">
+      <% campground.comments.forEach((comment)=> { %>
+      <div class="row mx-2">
+        <div class="col-md-12">
+          <span><strong><%= comment.author %></strong></span>
+          <span class="float-right">10 days ago</span>
+          <p><%= comment.text %></p>
+        </div>
+      </div>
+      <% }); %>
+    </div>
+  </div>
+</div>
 
 <% include ../partials/footer %>

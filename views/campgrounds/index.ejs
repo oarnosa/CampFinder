@@ -2,7 +2,7 @@
 
 <div class="container">
   <header class="jumbotron mt-4">
-    <div style="text-align: center; justify-content:center;">
+    <div class="text-center justify-content-center">
       <h1 class="display-4">Welcome to CampFinder!</h1>
       <p class="lead">View our hand-picked campgrounds from all over the world</p>
       <p>
@@ -15,11 +15,11 @@
     <% campgrounds.forEach(campground => { %>
     <div class="col-xl-3 col-lg-4 col-sm-6">
       <div class="card my-2">
-        <img src="<%= campground.image %>" style="height: 150px;" />
+        <img src="<%= campground.image %>" class="camp-thumbnail" />
         <div>
-          <h4 class="card-title" style="text-align: center"><%= campground.name %></h4>
+          <h4 class="card-title text-center"><%= campground.name %></h4>
         </div>
-        <p style="text-align: center">
+        <p class="text-center">
           <a href="/campgrounds/<%= campground._id %>" class="btn btn-outline-primary">More Info</a>
         </p>
       </div>
