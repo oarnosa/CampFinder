@@ -8,8 +8,13 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
       <div class="navbar-nav ml-auto">
-        <a href="" class="nav-item nav-link">Login<i class="fas fa-user ml-2"></i></a>
-        <a href="/register" class="nav-item nav-link">Sign Up<i class="fas fa-user-plus ml-2"></i></a>
+        <% if(!currentUser){ %>
+        <a href="/login" class="nav-item nav-link">Login</i></a>
+        <a href="/register" class="nav-item nav-link">Sign Up</a>
+        <% } else {  %>
+        <li><a class="nav-item nav-link">Signed In As: <%= currentUser.username %></a></li>
+        <a href="/logout" class="nav-item nav-link">Logout</a>
+        <% } %>
       </div>
     </div>
   </div>
