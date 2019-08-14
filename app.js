@@ -13,6 +13,20 @@ app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static(__dirname + '/public'));
 app.set('view engine', 'ejs');
 
+app.use(
+    require('express-session')({
+      secret: 'IqFic484907I0T552hiMQ1UCJimRGL55',
+      resave: false,
+      saveUninitialized: false,
+    })
+);
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new LocalStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 app.get('/', (req, res) => {
   res.render('landing');
 });
@@ -85,6 +99,23 @@ app.post('/campgrounds/:id/comments', (req, res) => {
         }
       });
     }
+  });
+});
+
+app.get('/register', (req, res) => {
+  res.render('register');
+});
+
+app.post('/register', (req, res) => {
+  const newUser = new User({username: req.body.username});
+  User.register(newUser, req.body.password, (err, user) => {
+    if (err) {
+      console.log(err);
+      return res.render('register');
+    }
+    passport.authenticate('local')(req, res, () => {
+      res.redirect('/campgrounds');
+    });
   });
 });
 
