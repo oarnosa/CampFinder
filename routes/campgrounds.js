@@ -5,6 +5,14 @@ const router = new express.Router();
 // include routes
 const Campground = require('../models/campground');
 
+// middleware
+const isLoggedIn = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect('/login');
+};
+
 // root route
 router.get('/', (req, res) => {
   Campground.find({}, (err, campgrounds) => {
@@ -17,22 +25,27 @@ router.get('/', (req, res) => {
 });
 
 // add new campground form
-router.get('/new', (req, res) => {
+router.get('/new', isLoggedIn, (req, res) => {
   res.render('campgrounds/new');
 });
 
 // create new campground
-router.post('/', (req, res) => {
+router.post('/', isLoggedIn, (req, res) => {
   const name = req.body.name;
   const image = req.body.image;
   const description = req.body.description;
+  const author = {
+    id: req.user._id,
+    username: req.user.username,
+  };
   Campground.create(
-      {name: name, image: image, description: description},
+      {name: name, image: image, description: description, author: author},
       (err, newlyCreated) => {
         if (err) {
           console.log(err);
         } else {
           res.redirect('/campgrounds');
+          console.log(newlyCreated);
         }
       }
   );

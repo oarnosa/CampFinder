@@ -16,6 +16,9 @@
         <h4 class="card-title d-inline"><a href="#"><%= campground.name %></a></h4>
         <h4 class="card-text float-right">$9.00/night</h4>
         <p class="card-text mt-3"><%= campground.description %></p>
+        <% if(campground.author.username) { %>
+        <p><em>Submitted By <%= campground.author.username %></em></p>
+        <% } %>
       </div>
     </div>
     <div class="card bg-light mt-3">
@@ -28,7 +31,7 @@
       <% campground.comments.forEach((comment)=> { %>
       <div class="row mx-2">
         <div class="col-md-12">
-          <span><strong><%= comment.author %></strong></span>
+          <strong><%= comment.author.username %></strong></span>
           <span class="float-right">10 days ago</span>
           <p><%= comment.text %></p>
         </div>
