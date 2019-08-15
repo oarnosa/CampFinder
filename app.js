@@ -1,25 +1,30 @@
+// include packages
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const LocalStrategy = require('passport-local');
-const Campground = require('./models/campground');
-const Comment = require('./models/comment');
+
+// include user model
 const User = require('./models/user');
 
-mongoose.connect('mongodb://localhost/yelp_camp', {useNewUrlParser: true});
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(express.static(__dirname + '/public'));
+// include routes
+const commentRoutes = require('./routes/comments');
+const campgroundRoutes = require('./routes/campgrounds');
+const indexRoutes = require('./routes/index');
+
+// connect to database
+mongoose.connect('mongodb://localhost/camp_finder', {useNewUrlParser: true});
+
+// expect ejs files
 app.set('view engine', 'ejs');
 
-const isLoggedIn = (req, res, next) => {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect('/login');
-};
+// setup body-parser
+app.use(bodyParser.urlencoded({extended: true}));
 
+// set up express-session
+app.use(express.static(__dirname + '/public'));
 app.use(
     require('express-session')({
       secret: 'IqFic484907I0T552hiMQ1UCJimRGL55',
@@ -27,127 +32,26 @@ app.use(
       saveUninitialized: false,
     })
 );
+
+// setup passport for user login
 app.use(passport.initialize());
 app.use(passport.session());
-
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
+// middleware to check if user is logged in
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   next();
 });
 
-app.get('/', (req, res) => {
-  res.render('landing');
-});
+// use created routes
+app.use(indexRoutes);
+app.use('/campgrounds/:id/comments', commentRoutes);
+app.use('/campgrounds', campgroundRoutes);
 
-app.get('/campgrounds', (req, res) => {
-  Campground.find({}, (err, campgrounds) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('campgrounds/index', {campgrounds: campgrounds});
-    }
-  });
-});
-
-app.post('/campgrounds', (req, res) => {
-  const name = req.body.name;
-  const image = req.body.image;
-  const description = req.body.description;
-  Campground.create(
-      {name: name, image: image, description: description},
-      (err, newlyCreated) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.redirect('/campgrounds');
-        }
-      }
-  );
-});
-
-app.get('/campgrounds/new', (req, res) => {
-  res.render('campgrounds/new');
-});
-
-app.get('/campgrounds/:id', (req, res) => {
-  Campground.findById(req.params.id)
-      .populate('comments')
-      .exec((err, foundCampground) => {
-        if (err) {
-          console.log(err);
-        } else {
-          res.render('campgrounds/show', {campground: foundCampground});
-        }
-      });
-});
-
-app.get('/campgrounds/:id/comments/new', isLoggedIn, (req, res) => {
-  Campground.findById(req.params.id, (err, campground) => {
-    if (err) {
-      console.log(err);
-    } else {
-      res.render('comments/new', {campground: campground});
-    }
-  });
-});
-
-app.post('/campgrounds/:id/comments', isLoggedIn, (req, res) => {
-  Campground.findById(req.params.id, (err, campground) => {
-    if (err) {
-      console.log(err);
-      res.redirect('/campgrounds');
-    } else {
-      Comment.create(req.body.comment, (err, comment) => {
-        if (err) {
-          console.log(err);
-        } else {
-          campground.comments.push(comment);
-          campground.save();
-          res.redirect('/campgrounds/' + campground._id);
-        }
-      });
-    }
-  });
-});
-
-app.get('/register', (req, res) => {
-  res.render('register');
-});
-
-app.post('/register', (req, res) => {
-  const newUser = new User({username: req.body.username});
-  User.register(newUser, req.body.password, (err, user) => {
-    if (err) {
-      console.log(err);
-      return res.render('register');
-    }
-    passport.authenticate('local')(req, res, () => {
-      res.redirect('/campgrounds');
-    });
-  });
-});
-
-app.get('/login', (req, res) => {
-  res.render('login');
-});
-
-app.post(
-    '/login',
-    passport.authenticate('local', {
-      successRedirect: '/campgrounds',
-      failureRedirect: '/login',
-    })
-);
-
-app.get('/logout', (req, res) => {
-  req.logout();
-  res.redirect('/campgrounds');
-});
-
+// setup port to show project
 app.listen(3000, () => {
   console.log('Server listening on port 3000!');
 });
