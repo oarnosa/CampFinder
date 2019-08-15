@@ -1,7 +1,7 @@
 <% include ../partials/header %> <% include ../partials/navbar %>
 
-<div class="row justify-content-md-center mt-4">
-  <div class="col-md-2">
+<div class="row justify-content-md-center mt-4 mx-2">
+  <div class="col-md-2 mb-3">
     <p class="lead">CampFinder</p>
     <div class="list-group">
       <li class="list-group-item active">Info 1</li>
@@ -9,7 +9,7 @@
       <li class="list-group-item">Info 3</li>
     </div>
   </div>
-  <div class="col-md-8">
+  <div class="col-md-7">
     <div class="card">
       <img class="card-img-top" src="<%= campground.image %>" />
       <div class="card-body">
@@ -19,6 +19,10 @@
         <% if(campground.author.username) { %>
         <p><em>Submitted By <%= campground.author.username %></em></p>
         <% } %>
+        <a class="btn btn-sm btn-outline-warning" href="/campgrounds/<%= campground._id %>/edit%>">Edit</a>
+        <form class="d-inline" action="/campgrounds/<%= campground._id %>?_method=DELETE" method="POST">
+          <button class="btn btn-sm btn-outline-danger">Delete</button>
+        </form>
       </div>
     </div>
     <div class="card bg-light mt-3">

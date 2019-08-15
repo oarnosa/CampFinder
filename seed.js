@@ -4,55 +4,30 @@ const Comment = require('./models/comment');
 
 const data = [
   {
-    name: 'Cloud\'s Rest',
-    image: 'https://farm4.staticflickr.com/3795/10131087094_c1c0a1c859.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  },
-  {
-    name: 'Desert Mesa',
-    image: 'https://farm6.staticflickr.com/5487/11519019346_f66401b6c1.jpg',
+    name: 'River Run',
+    image:
+      'https://images.unsplash.com/photo-1455763916899-e8b50eca9967?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     name: 'Canyon Floor',
-    image: 'https://farm1.staticflickr.com/189/493046463_841a18169e.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  },
-  {
-    name: 'Mountain Lodge',
     image:
-      'https://australia.businessesforsale.com/australian/static/articleimage?articleId=12982&name=image2.jpg',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  },
-  {
-    name: 'Widows Recluse',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR8jRkPPfwZH_N0IVBmNMgBBvT28zUv_gGqVh8gsbUxETIqX7GC3A',
+      'https://images.unsplash.com/photo-1445308394109-4ec2920981b1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
     name: 'Hillside Valley',
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDnRO8ibSBVjeCmK3KwEdvS44IiaR2i0Qk4YTARj4bRcLPTgMQZw',
+      'https://images.unsplash.com/photo-1511993807578-701168605ad3?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1347&q=80',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
   {
-    name: 'Prairie Run',
+    name: 'Widows Recluse',
     image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1tWzV65oiSTTyMhzLTJhIV5Q_C0Rf-t2BCvtZT-si1SkXHUCD',
-    description:
-      'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
-  },
-  {
-    name: 'River Bay',
-    image:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcd215gYrPLZRNdxk37MiYrlpLX5mKUm5xRCPDjl_BHEYZKC9o',
+      'https://images.unsplash.com/photo-1475483768296-6163e08872a1?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
   },
@@ -82,7 +57,10 @@ const seedDB = () => {
           Comment.create(
               {
                 text: 'This place is great, but I wish there was internet.',
-                author: 'Homer',
+                author: {
+                  id: '5d55dacd5522dd0b849d51b8',
+                  username: 'Orlando',
+                },
               },
               (err, comment) => {
                 if (err) {

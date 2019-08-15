@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 
 // include user model
@@ -32,6 +33,9 @@ app.use(
       saveUninitialized: false,
     })
 );
+
+// setup method-override
+app.use(methodOverride('_method'));
 
 // setup passport for user login
 app.use(passport.initialize());

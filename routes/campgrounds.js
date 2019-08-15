@@ -45,7 +45,6 @@ router.post('/', isLoggedIn, (req, res) => {
           console.log(err);
         } else {
           res.redirect('/campgrounds');
-          console.log(newlyCreated);
         }
       }
   );
@@ -62,6 +61,47 @@ router.get('/:id', (req, res) => {
           res.render('campgrounds/show', {campground: foundCampground});
         }
       });
+});
+
+// edit campground route
+router.get('/:id/edit', (req, res) => {
+  Campground.findById(req.params.id, (err, foundCampground) => {
+    if (err) {
+      res.redirect('/campgrounds');
+    } else {
+      res.render('campgrounds/edit', {campground: foundCampground});
+    }
+  });
+});
+
+// update campground route
+router.put('/:id', (req, res) => {
+  Campground.findByIdAndUpdate(
+      req.params.id,
+      req.body.campground,
+      (err, updatedCamp) => {
+        if (err) {
+          res.redirect('/campgrounds');
+        } else {
+          res.redirect('/campgrounds/' + req.params.id);
+        }
+      }
+  );
+});
+
+// destroy campground route
+router.delete('/:id', (req, res) => {
+  Campground.findByIdAndRemove(req.params.id, (err, campgroundRemoved) => {
+    if (err) {
+      console.log(err);
+    }
+    Comment.deleteMany({_id: {$in: campgroundRemoved.comments}}, (err) => {
+      if (err) {
+        console.log(err);
+      }
+      res.redirect('/campgrounds');
+    });
+  });
 });
 
 module.exports = router;
