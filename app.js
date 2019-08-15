@@ -6,7 +6,8 @@ const mongoose = require('mongoose');
 const passport = require('passport');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
-
+const SeedDB = require('./seed');
+SeedDB();
 // include user model
 const User = require('./models/user');
 
