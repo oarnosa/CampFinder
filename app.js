@@ -16,7 +16,11 @@ const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
 // connect to database
-mongoose.connect('mongodb://localhost/camp_finder', {useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/camper', {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true,
+});
 
 // expect ejs files
 app.set('view engine', 'ejs');
