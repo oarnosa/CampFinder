@@ -1,6 +1,6 @@
 // include packages
 const express = require('express');
-const router = new express.Router({mergeParams: true});
+const router = new express.Router({ mergeParams: true });
 
 // include models
 const Campground = require('../models/campground');
@@ -20,7 +20,7 @@ router.get('/new', isLoggedIn, (req, res) => {
     if (err) {
       console.log(err);
     } else {
-      res.render('comments/new', {campground: campground});
+      res.render('comments/new', { campground: campground });
     }
   });
 });
@@ -46,6 +46,46 @@ router.post('/', isLoggedIn, (req, res) => {
           res.redirect('/campgrounds/' + campground._id);
         }
       });
+    }
+  });
+});
+
+// edit a comment
+router.get('/:comment_id/edit', (req, res) => {
+  Comment.findById(req.params.comment_id, (err, foundComment) => {
+    if (err) {
+      console.log(err);
+    } else {
+      res.render('comments/edit', {
+        campground_id: req.params.id,
+        comment: foundComment
+      });
+    }
+  });
+});
+
+// update a comment
+router.put('/:comment_id', (req, res) => {
+  Comment.findByIdAndUpdate(
+    req.params.comment_id,
+    req.body.comment,
+    (err, updatedComment) => {
+      if (err) {
+        res.redirect('back');
+      } else {
+        res.redirect('/campgrounds/' + req.params.id);
+      }
+    }
+  );
+});
+
+// destroy a comment
+router.delete('/:comment_id', (req, res) => {
+  Comment.findByIdAndDelete(req.params.comment_id, err => {
+    if (err) {
+      res.redirect('back');
+    } else {
+      res.redirect('/campgrounds/' + req.params.id);
     }
   });
 });
