@@ -4,6 +4,7 @@ const app = express();
 const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
+const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 
@@ -38,6 +39,9 @@ app.use(
   })
 );
 
+// setup flash
+app.use(flash());
+
 // setup method-override
 app.use(methodOverride('_method'));
 
@@ -48,9 +52,11 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// middleware to check if user is logged in
+// check if user is logged in
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
   next();
 });
 

@@ -13,3 +13,16 @@
 </head>
 
 <body>
+  <% include ./navbar %>
+  <div class="container">
+    <% if(success && success.length > 0){ %>
+    <div class="alert alert-success mt-3" role="alert">
+      <%= success %>
+    </div>
+    <% } %>
+    <% if(error && error.length > 0){ %>
+    <div class="alert alert-danger mt-3" role="alert">
+      <%= error %>
+    </div>
+    <% } %>
+  </div>
