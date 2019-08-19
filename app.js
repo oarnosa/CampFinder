@@ -8,10 +8,6 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 
-// uncomment to seed database
-// const SeedDB = require('./seed');
-// SeedDB();
-
 // include user model
 const User = require('./models/user');
 
@@ -21,19 +17,11 @@ const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
 // connect to database
-mongoose.connect(
-  'mongodb+srv://admin:admin@cluster0-dktjq.mongodb.net/camper?retryWrites=true&w=majority',
-  {
-    useNewUrlParser: true,
-    useFindAndModify: false,
-    useCreateIndex: true
-  }
-);
-// mongoose.connect('mongodb://localhost/camper', {
-//   useNewUrlParser: true,
-//   useFindAndModify: false,
-//   useCreateIndex: true
-// });
+mongoose.connect(process.env.DATABASEURL, {
+  useNewUrlParser: true,
+  useFindAndModify: false,
+  useCreateIndex: true
+});
 
 // expect ejs files
 app.set('view engine', 'ejs');
@@ -79,5 +67,5 @@ app.use('/campgrounds', campgroundRoutes);
 
 // setup port to show project
 app.listen(process.env.PORT || 3000, () => {
-  console.log('Server listening on port 3000!');
+  console.log('App Started...');
 });
