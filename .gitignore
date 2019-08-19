@@ -3,3 +3,5 @@ node_modules
 
 # ignore eslint config
 .eslintrc.json
+
+package-lock.json
