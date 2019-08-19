@@ -8,6 +8,10 @@ const flash = require('connect-flash');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 
+// uncomment to seed database
+// const SeedDB = require('./seed');
+// SeedDB();
+
 // include user model
 const User = require('./models/user');
 
