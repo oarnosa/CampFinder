@@ -78,6 +78,6 @@ app.use('/campgrounds/:id/comments', commentRoutes);
 app.use('/campgrounds', campgroundRoutes);
 
 // setup port to show project
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log('Server listening on port 3000!');
 });
