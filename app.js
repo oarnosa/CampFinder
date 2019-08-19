@@ -21,11 +21,19 @@ const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
 // connect to database
-mongoose.connect('mongodb://localhost/camper', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-});
+mongoose.connect(
+  'mongodb+srv://admin:admin@cluster0-dktjq.mongodb.net/camper?retryWrites=true&w=majority',
+  {
+    useNewUrlParser: true,
+    useFindAndModify: false,
+    useCreateIndex: true
+  }
+);
+// mongoose.connect('mongodb://localhost/camper', {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+//   useCreateIndex: true
+// });
 
 // expect ejs files
 app.set('view engine', 'ejs');
