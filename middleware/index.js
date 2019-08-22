@@ -3,7 +3,7 @@ const Campground = require('../models/campground');
 const Comment = require('../models/comment');
 
 module.exports = {
-  //check if user is logged in
+  // check if user is logged in
   isLoggedIn: (req, res, next) => {
     if (req.isAuthenticated()) {
       return next();
@@ -54,5 +54,5 @@ module.exports = {
       req.flash('error', 'You must be logged in to do that!');
       res.redirect('back');
     }
-  }
+  },
 };

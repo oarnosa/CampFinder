@@ -19,15 +19,15 @@ router.get('/register', (req, res) => {
 
 // handle sign up logic
 router.post('/register', (req, res) => {
-  const newUser = new User({ username: req.body.username });
+  const newUser = new User({username: req.body.username});
   User.register(newUser, req.body.password, (err, user) => {
     if (err) {
-      return res.render('register', { error: err.message });
+      return res.render('register', {error: err.message});
     }
     passport.authenticate('local')(req, res, () => {
       req.flash(
-        'success',
-        `Welcome to CampSite! Nice to meet you ${user.username}`
+          'success',
+          `Welcome to CampSite! Nice to meet you ${user.username}`
       );
       res.redirect('/campgrounds');
     });
@@ -41,11 +41,11 @@ router.get('/login', (req, res) => {
 
 // handle login route
 router.post(
-  '/login',
-  passport.authenticate('local', {
-    successRedirect: '/campgrounds',
-    failureRedirect: '/login'
-  })
+    '/login',
+    passport.authenticate('local', {
+      successRedirect: '/campgrounds',
+      failureRedirect: '/login',
+    })
 );
 
 // handle logout request

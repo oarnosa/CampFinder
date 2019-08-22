@@ -1,26 +1,28 @@
 <% include ../partials/header %>
-<div class="container">
-  <header class="jumbotron mt-4">
-    <div class="text-center justify-content-center">
-      <h1 class="header">Explore CampSites</h1>
+<div class="container-fluid">
+  <header class="row bg-dark">
+    <div class="header text-center">
+      <h1>Explore CampSites</h1>
       <p class="">View our hand-picked campsites from all over the world</p>
-      <a href="/campgrounds/new" class="btn btn-outline-success">Add a new campsite</a>
+      <a href="/campgrounds/new" class="btn btn-outline-light">Add a new campsite</a>
     </div>
   </header>
-  <section class="row">
-    <% campgrounds.forEach(campground => { %>
-    <div class="col-4">
-      <div class="card my-2 bg-light">
-        <img src="<%= campground.image %>" class="camp-thumbnail" />
-        <div class="mt-2 mb-1">
-          <h4 class="card-title text-center"><%= campground.name %></h4>
+  <div class="container">
+    <section class="row mt-4">
+      <% campgrounds.forEach(campground => { %>
+      <div class="col-lg-4 col-md-6">
+        <div class="card my-2 bg-light">
+          <img src="<%= campground.image %>" class="card-img-top" />
+          <div class="mt-2 mb-1">
+            <h4 class="card-title text-center"><%= campground.name %></h4>
+          </div>
+          <p class="text-center">
+            <a href="/campgrounds/<%= campground._id %>" class="btn btn-outline-primary">More Info</a>
+          </p>
         </div>
-        <p class="text-center">
-          <a href="/campgrounds/<%= campground._id %>" class="btn btn-outline-primary">More Info</a>
-        </p>
       </div>
-    </div>
-    <% }); %>
-  </section>
+      <% }); %>
+    </section>
+  </div>
 </div>
 <% include ../partials/footer %>

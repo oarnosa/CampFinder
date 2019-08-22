@@ -10,7 +10,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -21,7 +21,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -32,7 +32,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -43,7 +43,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -54,7 +54,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -65,7 +65,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -76,7 +76,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -87,7 +87,7 @@ const data = [
     description:
       'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum',
     author: {
-      id: '5d56c1ac91e8e60b181e7b93',
+      id: '5d5eb8a3d7bfdc3ffc9d4e8f',
       username: 'Admin',
     },
   },
@@ -118,7 +118,7 @@ const seedDB = () => {
               {
                 text: 'This place is great, but I wish there was internet.',
                 author: {
-                  id: '5d56c1ac91e8e60b181e7b93',
+                  id: '5d5eb8a3d7bfdc3ffc9d4e8f',
                   username: 'Admin',
                 },
               },

@@ -24,23 +24,23 @@ dotenv.config();
 mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useFindAndModify: false,
-  useCreateIndex: true
+  useCreateIndex: true,
 });
 
 // expect ejs files
 app.set('view engine', 'ejs');
 
 // setup body-parser
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded({extended: true}));
 
 // set up express-session
 app.use(express.static(__dirname + '/public'));
 app.use(
-  require('express-session')({
-    secret: 'IqFic484907I0T552hiMQ1UCJimRGL55',
-    resave: false,
-    saveUninitialized: false
-  })
+    require('express-session')({
+      secret: 'IqFic484907I0T552hiMQ1UCJimRGL55',
+      resave: false,
+      saveUninitialized: false,
+    })
 );
 
 // setup flash
