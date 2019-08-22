@@ -9,20 +9,11 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
   <link rel="stylesheet" href="/stylesheets/main.css">
-  <title>Camper</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Oswald&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../../node_modules/@fortawesome/css/all.css">
+  <title>CampSite</title>
 </head>
 
 <body>
   <% include ./navbar %>
-  <div class="container">
-    <% if(success && success.length > 0){ %>
-    <div class="alert alert-success mt-3" role="alert">
-      <%= success %>
-    </div>
-    <% } %>
-    <% if(error && error.length > 0){ %>
-    <div class="alert alert-danger mt-3" role="alert">
-      <%= error %>
-    </div>
-    <% } %>
-  </div>
+  <% include ./flash %>

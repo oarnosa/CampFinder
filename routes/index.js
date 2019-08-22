@@ -5,6 +5,7 @@ const passport = require('passport');
 
 // include models
 const User = require('../models/user');
+const Campground = require('../models/campground');
 
 // root route
 router.get('/', (req, res) => {
@@ -26,7 +27,7 @@ router.post('/register', (req, res) => {
     passport.authenticate('local')(req, res, () => {
       req.flash(
         'success',
-        `Welcome to Camper! Nice to meet you ${user.username}`
+        `Welcome to CampSite! Nice to meet you ${user.username}`
       );
       res.redirect('/campgrounds');
     });

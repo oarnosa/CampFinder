@@ -1,3 +1,3 @@
-# Camper
+# CampSite
 
-> A place to help you find and share campsites
+> A site to find and share campsites

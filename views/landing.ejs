@@ -2,39 +2,19 @@
 <html>
 
 <head>
-  <title>Camper</title>
+  <title>CampSite</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Oswald&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/stylesheets/landing.css">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js" type="text/javascript"
-    async></script>
 </head>
 
 <body>
-
-  <div class="container">
-    <% if(error && error.length > 0){ %>
-    <div class="alert alert-danger" role="alert">
-      <%= error %>
+  <% include partials/flash %>
+  <div class="tinted-image">
+    <div class="header">
+      <h2>Find your next</h2>
+      <h1>CampSite</h1>
+      <a href="/campgrounds" class="btn btn btn-outline-light">Explore Campsites</a>
     </div>
-    <% } %>
-    <% if(success && success.length > 0){ %>
-    <div class="alert alert-success" role="alert">
-      <%= success %>
-    </div>
-    <% } %>
   </div>
-
-  <div id="landing-header">
-    <h1>Welcome to Camper!</h1>
-    <a href="/campgrounds" class="btn btn-lg btn-primary">View All Campgrounds</a>
-  </div>
-
-  <ul class="slideshow">
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
-
   <% include partials/footer %>

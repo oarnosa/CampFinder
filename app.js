@@ -5,6 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const passport = require('passport');
 const flash = require('connect-flash');
+const dotenv = require('dotenv');
 const methodOverride = require('method-override');
 const LocalStrategy = require('passport-local');
 
@@ -16,8 +17,11 @@ const commentRoutes = require('./routes/comments');
 const campgroundRoutes = require('./routes/campgrounds');
 const indexRoutes = require('./routes/index');
 
+// set environment variables
+dotenv.config();
+
 // connect to database
-mongoose.connect(process.env.DATABASEURL, {
+mongoose.connect(process.env.DATABASE_URL, {
   useNewUrlParser: true,
   useFindAndModify: false,
   useCreateIndex: true

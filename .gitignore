@@ -3,3 +3,6 @@ node_modules
 
 # ignore eslint config
 .eslintrc.json
+
+# environment variables
+.env

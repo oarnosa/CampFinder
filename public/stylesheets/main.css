@@ -1,5 +1,9 @@
+body {
+  font-family: 'Lato', sans-serif;
+}
+
 .camp-thumbnail {
-  height: 155px;
+  height: 245px;
 }
 
 .form {
@@ -10,4 +14,19 @@
 .form-sm {
   width: 400px;
   margin: auto;
+}
+
+.navbar-brand {
+  font-family: 'Lobster', cursive;
+  font-size: 1.5rem;
+}
+
+h1.header {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+}
+
+.jumbotron {
+  background-color: white;
+  padding: 48px 32px;
 }

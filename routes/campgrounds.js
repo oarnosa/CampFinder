@@ -2,7 +2,7 @@
 const express = require('express');
 const router = new express.Router();
 
-// include routes
+// include models
 const Campground = require('../models/campground');
 
 // include middleware

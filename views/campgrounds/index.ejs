@@ -1,20 +1,16 @@
 <% include ../partials/header %>
-
 <div class="container">
   <header class="jumbotron mt-4">
     <div class="text-center justify-content-center">
-      <h1 class="display-4">Welcome to Camper!</h1>
-      <p class="lead">View our hand-picked campgrounds from all over the world</p>
-      <p>
-        <a href="/campgrounds/new" class="btn btn-primary btn-large">Add New Campground</a>
-      </p>
+      <h1 class="header">Explore CampSites</h1>
+      <p class="">View our hand-picked campsites from all over the world</p>
+      <a href="/campgrounds/new" class="btn btn-outline-success">Add a new campsite</a>
     </div>
   </header>
-
-  <div class="row">
+  <section class="row">
     <% campgrounds.forEach(campground => { %>
-    <div class="col-xl-3 col-lg-4 col-sm-6">
-      <div class="card my-2">
+    <div class="col-4">
+      <div class="card my-2 bg-light">
         <img src="<%= campground.image %>" class="camp-thumbnail" />
         <div class="mt-2 mb-1">
           <h4 class="card-title text-center"><%= campground.name %></h4>
@@ -25,7 +21,6 @@
       </div>
     </div>
     <% }); %>
-  </div>
+  </section>
 </div>
-
 <% include ../partials/footer %>
