@@ -13,7 +13,7 @@
 
 ## General info
 
-The purpose of this project was to develop my skills in creating a full-stack RESTful application using the latest technologies such as MongoDB, Node.js, Express.js, and more. This served as an introduction to working with server-side frameworks and understanding how the interactions between the client and server function. The features were implemented with full CRUD (Create, Read, Update, Destroy) following the standard of RESTful routing to allow the seperation of data from the client and server. Other features such as user authentication, and user authorization exposed me to the importance of middleware when working with routes and the data persistance added from using MongoDB exposed me to working with a NoSQL database. This app was deployed using Heroku and MongoDB Atlas which finalized my understand of building and deploying a full web-app from start to finish.
+The purpose of this project was to develop my skills in creating a full-stack RESTful application using the latest technologies such as MongoDB, Node.js, Express.js, and more. This served as an introduction to working with server-side frameworks and understanding how the interactions between the client and server function. The features were implemented with full CRUD (Create, Read, Update, Destroy) following the standard of RESTful routing to allow the seperation of data from the client and server. Other features such as user authentication, and user authorization exposed me to the importance of middleware when working with routes and the data persistance added from using MongoDB exposed me to working with a NoSQL database. This app was deployed using Heroku and MongoDB Atlas which improved my understanding of building and deploying a full web-app from start to finish.
 
 ## Technologies
 
@@ -27,7 +27,7 @@ The purpose of this project was to develop my skills in creating a full-stack RE
 
 ## Setup
 
-Clone project into desired directory and enure [MongoDB](https://www.mongodb.com/download-center/community) and [Node.js](https://nodejs.org/en/download/) are installed.
+Clone project into desired directory and ensure [MongoDB](https://www.mongodb.com/download-center/community) and [Node.js](https://nodejs.org/en/download/) are installed.
 
 Within the project root path, create a **_.env_** file and declare the database path:
 
@@ -78,7 +78,7 @@ To-do list:
 
 ## Status
 
-Project is: _in progress_, as there are several features which I would like to implement as I learn about new technologies. I would at some point like to recreate the UI/UX when my skills with CSS and its extensions such as Sass and Less improve.
+Project is: _in progress_, as there are several features which I would like to implement as I learn about new technologies. I would like to, at some pont, recreate the UI/UX when my skills with CSS and frontend frameworks improve.
 
 ## Inspiration
 
