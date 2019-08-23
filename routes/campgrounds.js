@@ -34,7 +34,13 @@ router.post('/', middleware.isLoggedIn, (req, res) => {
     username: req.user.username,
   };
   Campground.create(
-      {name: name, image: image, description: description, author: author},
+      {
+        name: name,
+        price: price,
+        image: image,
+        description: description,
+        author: author,
+      },
       (err, newlyCreated) => {
         if (err) {
           console.log(err);

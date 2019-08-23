@@ -71,7 +71,6 @@ This app was deployed using Heroku and can be viewed at [campsite-app.herokuapp.
 
 To-do list:
 
-- Add dynamic pricing
 - Add search for campsites
 - Create a superuser account to manage all the content
 - Improve UI/UX with animations and better visuals
