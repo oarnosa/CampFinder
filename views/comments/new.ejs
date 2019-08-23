@@ -2,8 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <h1 class="text-center my-4">Add a Comment to <%= campground.name %></h1>
-      <div class="form">
+      <div class="form-post my-5">
+        <h1 class="text-center my-5">Add a Comment to <%= campground.name %></h1>
         <form action="/campgrounds/<%= campground._id %>/comments" method="POST">
           <div class="form-group">
             <textarea class="form-control" name="comment[text]" placeholder="comment" rows="5"></textarea>

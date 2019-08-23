@@ -25,7 +25,7 @@
         <% } %>
       </div>
     </div>
-    <div class="card bg-light mt-3">
+    <div class="card bg-light my-3">
       <p class="card-body text-dark m-0">
         <a class="btn btn-outline-success float-right" href="/campgrounds/<%= campground._id %>/comments/new%>">
           Add New Comment
@@ -34,7 +34,7 @@
       <hr class="mt-0">
       <% campground.comments.forEach((comment)=> { %>
       <div class="row mx-2">
-        <div class="col-md-12">
+        <div class="col-md-12 mb-3">
           <strong><%= comment.author.username %></strong></span>
           <span class="float-right">10 days ago</span>
           <p><%= comment.text %></p>

@@ -1,18 +1,24 @@
 body {
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
 }
 
 .form {
   width: 600px;
   margin: 200px auto;
 }
+
 .form-sm {
   width: 400px;
   margin: auto;
 }
 
+.form-post {
+  width: 600px;
+  margin: auto;
+}
+
 .navbar-brand {
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
   font-size: 1.5rem;
 }
 
@@ -22,7 +28,11 @@ body {
 }
 
 .header h1 {
-  font-family: "Lobster", cursive;
+  font-family: 'Lobster', cursive;
   text-shadow: 2px 2px 8px #000;
   font-size: 3rem;
+}
+
+.alert {
+  margin-bottom: 0;
 }
