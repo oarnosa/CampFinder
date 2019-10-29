@@ -1,7 +1,7 @@
 {
-  "name": "camper",
+  "name": "campsite",
   "version": "1.0.0",
-  "description": "Camper",
+  "description": "CampSite",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
@@ -13,11 +13,11 @@
     "body-parser": "^1.19.0",
     "bootstrap": "^4.3.1",
     "connect-flash": "^0.1.1",
-    "dotenv": "^8.1.0",
-    "ejs": "^2.6.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^2.7.1",
     "express": "^4.17.1",
     "express-favicon": "^2.0.1",
-    "express-session": "^1.16.2",
+    "express-session": "^1.17.0",
     "jquery": "^3.4.1",
     "method-override": "^3.0.0",
     "mongoose": "^5.6.11",
@@ -26,8 +26,8 @@
     "passport-local-mongoose": "^5.0.1"
   },
   "devDependencies": {
-    "eslint": "^6.2.2",
+    "eslint": "^6.6.0",
     "eslint-config-google": "^0.13.0",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.4"
   }
 }
